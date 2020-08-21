@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2009
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JQlab1", "JQlab1\JQlab1.csproj", "{B236797C-095C-4875-87A5-A172B7DB90CF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B236797C-095C-4875-87A5-A172B7DB90CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B236797C-095C-4875-87A5-A172B7DB90CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B236797C-095C-4875-87A5-A172B7DB90CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B236797C-095C-4875-87A5-A172B7DB90CF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {396F5B6A-A64D-462C-98BF-82D6EFDB5BE0}
+	EndGlobalSection
+EndGlobal

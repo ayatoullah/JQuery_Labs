@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        div {
+            margin: 10px auto;
+            border: 2px solid pink;
+            width: 900px;
+            height: 100px;
+        }
+
+        img {
+            margin-top: 25px;
+            width: 50px;
+            height: 50px;
+            position: absolute;
+        }
+
+        .flipClass {
+            transform: rotateY(180deg)
+        }
+    </style>
+    <script src="js/jquery-3.2.1.js"></script>
+    <script>
+        //there is two cases we will remove interval
+        //first case:when press stop
+        //second case:when reach to the other side
+        //using flag to determine reaching other side
+        //using setinterval to repeat func every specific interval
+        //using left attr , right attr to change distance from img every interval
+        //using transform to change direction
+        //changing value of btn from val to another val when pressing to determine img move or stop now 
+        //clear interval when exceeding width div+start dis or when reach start point
+        var imgLeft = 300;
+        var flag = false;
+        function moveRight() {
+            imgLeft += 5;
+            $("img").css("left", imgLeft + "px");
+            if (imgLeft > 1100) {
+                clearInterval(timerId);
+                flag = true;
+            }
+            if (flag == true) {
+                $("img").addClass("flipClass");
+                timerId = setInterval("moveLeft()", 10);
+                flag = false;
+            }
+
+        }
+
+        function moveLeft() {
+            imgLeft -= 5;
+            $("img").css("left", imgLeft + "px");
+            if (imgLeft < 260) {
+                clearInterval(timerId);
+                flag = true;
+            }
+            if (flag == true) {
+                $("img").removeClass("flipClass");
+                timerId = setInterval("moveRight()", 10);
+                flag = false;
+            }
+        }
+
+        $(function () {
+            $("input").on("click", function () {
+                if ($(this).attr("value") == "Go") {
+                    timerId = setInterval("moveRight()", 10);
+                    $(this).attr("value", "Stop");
+                }
+                else {
+                    clearInterval(timerId);
+                    $(this).attr("value", "Go");
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div>
+
+        <img src="santa.jpg" />
+    </div>
+    <input type="button" value="Go" />
+</body>
+</html>
